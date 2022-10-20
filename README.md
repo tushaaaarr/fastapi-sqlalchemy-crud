@@ -1,6 +1,6 @@
 # fastapi-sqlalchemy-crud
 
-Live demo --  https://myaddress-book.herokuapp.com/
+Live demo --  https://myaddress-book.herokuapp.com/user/2/view-addresses/
 
 Swagger doc --  https://myaddress-book.herokuapp.com/docs
 
