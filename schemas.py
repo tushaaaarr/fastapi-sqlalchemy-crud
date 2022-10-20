@@ -1,3 +1,4 @@
+from math import dist
 from typing import List
 import datetime as _dt
 from  pydantic import BaseModel
@@ -8,7 +9,16 @@ class _AddressBase(BaseModel):
     coordinates: str
 
 
+
 class AddressCreate(_AddressBase):
+    pass
+
+
+class _Address_dist_Base(BaseModel):
+    coordinates: str
+    distance: float
+
+class AddressWithDistance(_Address_dist_Base):
     pass
 
 
