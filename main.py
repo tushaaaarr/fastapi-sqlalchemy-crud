@@ -118,10 +118,10 @@ def update_add(address: _schemas.AddressWithDistance,db: Session = Depends(get_d
     lon1 = float(address.dict()['coordinates'].split(',')[1].split(':')[1])
     lat1 = float(address.dict()['coordinates'].split(',')[0].split(':')[1])
     loc_list = []
-    for i in records:
+    for add in records:
         # Point two 
-        lon2 = float(i.coordinates.split(',')[1].split(':')[1])
-        lat2 = float(i.coordinates.split(',')[0].split(':')[1])
+        lon2 = float(add.coordinates.split(',')[1].split(':')[1])
+        lat2 = float(add.coordinates.split(',')[0].split(':')[1])
 
         coords_1 = (lon1, lat1)
         coords_2 = (lon2, lat2)
@@ -130,7 +130,7 @@ def update_add(address: _schemas.AddressWithDistance,db: Session = Depends(get_d
         # check if address within given distance
         if loc_dist <= given_dist:
             locaction_dict = {
-                'Address':i.address,
+                'Address':add.address,
                 'Distance':loc_dist
             }
             loc_list.append(locaction_dict)
