@@ -131,7 +131,9 @@ def update_add(address: _schemas.AddressWithDistance,db: Session = Depends(get_d
         if loc_dist <= given_dist:
             locaction_dict = {
                 'Address':add.address,
-                'Distance':str(loc_dist) + str("Km")
+                'Distance':str(loc_dist) +str(" Km")
             }
             loc_list.append(locaction_dict)
+    if len(loc_list) < 1:
+         return {"message": f"Address Not Found"}
     return loc_list
